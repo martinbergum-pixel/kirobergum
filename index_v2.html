@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiropraktor Bergum – Hamar</title>
+<meta name="description" content="Kiropraktor Bergum i Hamar. Behandling av muskel- og skjelettplager, med spesialkompetanse på svimmelhet. Lille Strandgate 3, 2317 Hamar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #15302E;
+    --ink-2: #1E403D;
+    --paper: #EFF0E9;
+    --panel: #FFFFFF;
+    --line: #DBDFD5;
+    --gold: #B98A3E;
+    --cream: #F3F1E7;
+    --text-soft: #3C4A45;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text-soft);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Source Serif 4', Georgia, serif;
+    color:var(--ink);
+    margin:0;
+    font-weight:600;
+  }
+  a{color:var(--ink);}
+  .wrap{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- DARK FRAME: header + hero ---------- */
+  .frame-top{
+    background:var(--ink);
+    color:var(--cream);
+  }
+  header{
+    padding:22px 0;
+  }
+  header .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .brand{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:1.15rem;
+    color:var(--cream);
+    letter-spacing:0.01em;
+  }
+  header nav a{
+    text-decoration:none;
+    color:var(--cream);
+    opacity:0.85;
+    margin-left:26px;
+    font-size:0.94rem;
+  }
+  header nav a:hover{opacity:1;}
+  .call-btn{
+    background:var(--gold);
+    color:var(--ink) !important;
+    opacity:1 !important;
+    padding:9px 18px;
+    border-radius:2px;
+    font-size:0.9rem;
+    font-weight:500;
+  }
+
+  .hero{
+    padding:56px 0 84px;
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:32px;
+    align-items:center;
+  }
+  .hero h1{
+    color:var(--cream);
+    font-size:clamp(2.1rem, 4.2vw, 3rem);
+    line-height:1.18;
+    max-width:16ch;
+  }
+  .hero p.lead{
+    margin-top:22px;
+    max-width:48ch;
+    font-size:1.08rem;
+    color:#D6DAD1;
+  }
+  .hero-illustration{
+    width:100%;
+    height:auto;
+    opacity:0.9;
+  }
+  .hero-facts{
+    margin-top:40px;
+    display:flex;
+    gap:0;
+    border-top:1px solid rgba(243,241,231,0.18);
+    padding-top:22px;
+  }
+  .hero-facts div{
+    font-size:0.92rem;
+    padding-right:28px;
+    margin-right:28px;
+    border-right:1px solid rgba(243,241,231,0.18);
+  }
+  .hero-facts div:last-child{border-right:none;}
+  .hero-facts strong{
+    display:block;
+    color:var(--cream);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:1.05rem;
+    font-weight:600;
+    margin-bottom:2px;
+  }
+
+  /* ---------- LIGHT MID SECTION ---------- */
+  section{
+    padding:64px 0;
+  }
+  section > .wrap > h2{
+    font-size:1.6rem;
+    margin-bottom:30px;
+  }
+
+  .priser{
+    background:var(--panel);
+    border:1px solid var(--line);
+  }
+  .pris-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:24px 28px;
+    border-left:3px solid var(--gold);
+  }
+  .pris-row + .pris-row{
+    border-top:1px solid var(--line);
+  }
+  .pris-row .navn{
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:1.15rem;
+  }
+  .pris-row .desc{
+    font-size:0.9rem;
+    color:var(--text-soft);
+    margin-top:4px;
+  }
+  .pris-row .belop{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:1.35rem;
+    color:var(--ink);
+    white-space:nowrap;
+  }
+  .priser-note{
+    margin-top:16px;
+    font-size:0.9rem;
+  }
+
+  .kontakt-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+  }
+  .kontakt-block h3{
+    font-size:0.85rem;
+    color:var(--gold);
+    margin-bottom:8px;
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+  }
+  .kontakt-block p{
+    margin:0 0 26px;
+    color:var(--ink);
+    font-size:1.02rem;
+  }
+  .kontakt-block a{text-decoration:none;}
+  .kontakt-block a:hover{text-decoration:underline;}
+
+  /* ---------- DARK FRAME: footer ---------- */
+  .frame-bottom{
+    background:var(--ink);
+    color:#B7BFB6;
+    padding:26px 0;
+  }
+  .frame-bottom .wrap{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:0.85rem;
+  }
+
+  @media (max-width:760px){
+    .hero{grid-template-columns:1fr;}
+    .hero-illustration{display:none;}
+    .kontakt-grid{grid-template-columns:1fr;}
+    .pris-row{flex-direction:column; gap:6px;}
+    .hero-facts{flex-wrap:wrap; row-gap:16px;}
+    .hero-facts div{margin-right:20px; padding-right:20px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<div class="frame-top">
+  <header>
+    <div class="wrap">
+      <div class="brand">Kiropraktor Bergum</div>
+      <nav>
+        <a href="#priser">Priser</a>
+        <a href="#kontakt">Kontakt</a>
+        <a class="call-btn" href="tel:+4762536920">Ring 625 36 920</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero wrap">
+    <div>
+      <h1>Hjelper deg med plager i muskler, skjelett og balanseapparat</h1>
+      <p class="lead">Kiropraktor Bergum tar imot pasienter i Lille Strandgate 3, midt i Hamar sentrum — med bred erfaring på muskel- og skjelettplager og spesiell kompetanse på svimmelhet.</p>
+      <div class="hero-facts">
+        <div><strong>Martin Bergum</strong>Kiropraktor</div>
+        <div><strong>Man–fre</strong>08.00–16.00</div>
+        <div><strong>Time?</strong>Ring eller send e-post</div>
+      </div>
+    </div>
+    <svg class="hero-illustration" viewBox="0 0 300 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- abstract spine / balance line motif -->
+      <path d="M150 10 C 120 60, 180 100, 150 150 C 120 200, 180 240, 150 290 C 135 315, 165 330, 150 350"
+            fill="none" stroke="#B98A3E" stroke-width="1.4" opacity="0.9"/>
+      <circle cx="150" cy="10" r="5" fill="#B98A3E"/>
+      <circle cx="150" cy="70" r="3.5" fill="#B98A3E" opacity="0.85"/>
+      <circle cx="150" cy="130" r="3.5" fill="#B98A3E" opacity="0.85"/>
+      <circle cx="150" cy="190" r="3.5" fill="#B98A3E" opacity="0.85"/>
+      <circle cx="150" cy="250" r="3.5" fill="#B98A3E" opacity="0.85"/>
+      <circle cx="150" cy="310" r="3.5" fill="#B98A3E" opacity="0.85"/>
+      <line x1="60" y1="330" x2="240" y2="330" stroke="#B98A3E" stroke-width="1" opacity="0.35"/>
+    </svg>
+  </div>
+</div>
+
+<section id="priser">
+  <div class="wrap">
+    <h2>Priser</h2>
+    <div class="priser">
+      <div class="pris-row">
+        <div>
+          <div class="navn">Første konsultasjon</div>
+          <div class="desc">Undersøkelse, anamnese og behandling</div>
+        </div>
+        <div class="belop">880 kr</div>
+      </div>
+      <div class="pris-row">
+        <div>
+          <div class="navn">Påfølgende konsultasjon</div>
+          <div class="desc">Oppfølgingstime</div>
+        </div>
+        <div class="belop">630 kr</div>
+      </div>
+    </div>
+    <p class="priser-note">Ring eller send e-post for å bestille time – nettbasert timebestilling kommer.</p>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap">
+    <h2>Kontakt</h2>
+    <div class="kontakt-grid">
+      <div class="kontakt-block">
+        <h3>Adresse</h3>
+        <p>Lille Strandgate 3<br>2317 Hamar</p>
+        <h3>Åpningstider</h3>
+        <p>Mandag–fredag: 08.00–16.00</p>
+      </div>
+      <div class="kontakt-block">
+        <h3>Telefon</h3>
+        <p><a href="tel:+4762536920">625 36 920</a></p>
+        <h3>E-post</h3>
+        <p><a href="mailto:post@kirobergum.no">post@kirobergum.no</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="frame-bottom">
+  <div class="wrap">
+    <span>Kiropraktor Bergum · Lille Strandgate 3, 2317 Hamar</span>
+    <span>Org.nr 995813793</span>
+  </div>
+</div>
+
+</body>
+</html>
