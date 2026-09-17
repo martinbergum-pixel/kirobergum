@@ -242,15 +242,24 @@
   }
 
   /* ---------- COOKIE BANNER ---------- */
+  .cookie-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(21,48,46,0.4);
+    z-index:999;
+    pointer-events:none;
+  }
+  .cookie-overlay.visible{display:block;}
   .cookie-banner{
     display:none;
     position:fixed;
     left:0; right:0; bottom:0;
     background:var(--ink);
     color:var(--cream);
-    padding:18px 20px;
+    padding:26px 24px;
     z-index:1000;
-    box-shadow:0 -2px 12px rgba(0,0,0,0.15);
+    box-shadow:0 -6px 24px rgba(0,0,0,0.25);
   }
   .cookie-banner.visible{display:block;}
   .cookie-banner-inner{
@@ -259,43 +268,44 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
+    gap:24px;
     flex-wrap:wrap;
   }
   .cookie-banner p{
     margin:0;
-    font-size:0.92rem;
-    color:#D6DAD1;
+    font-size:1.02rem;
+    color:var(--cream);
     max-width:60ch;
   }
   .cookie-banner-actions{
     display:flex;
-    gap:10px;
+    gap:12px;
     flex-shrink:0;
   }
   .cookie-btn{
     border:none;
-    padding:9px 18px;
+    padding:12px 26px;
     border-radius:2px;
-    font-size:0.9rem;
+    font-size:0.98rem;
     cursor:pointer;
     font-family:'Inter', sans-serif;
   }
   .cookie-btn-primary{
     background:var(--gold);
     color:var(--ink);
-    font-weight:500;
+    font-weight:600;
   }
   .cookie-btn-secondary{
     background:transparent;
     color:var(--cream);
-    border:1px solid rgba(243,241,231,0.35);
+    border:1px solid rgba(243,241,231,0.45);
   }
 </style>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9e6954a4423944619c887c9b5ff89471"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
 
+<div id="cookie-overlay" class="cookie-overlay"></div>
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite">
   <div class="cookie-banner-inner">
     <p>Vi bruker Google Analytics for å forstå hvordan siden brukes. Godtar du dette?</p>
@@ -409,6 +419,7 @@
 (function(){
   var GA_ID = "G-62B5WPPGJ3";
   var banner = document.getElementById('cookie-banner');
+  var overlay = document.getElementById('cookie-overlay');
   var acceptBtn = document.getElementById('cookie-accept');
   var declineBtn = document.getElementById('cookie-decline');
 
@@ -429,16 +440,19 @@
     loadGA();
   } else if(consent !== 'denied'){
     banner.classList.add('visible');
+    overlay.classList.add('visible');
   }
 
   acceptBtn.addEventListener('click', function(){
     localStorage.setItem('cookie-consent', 'granted');
     banner.classList.remove('visible');
+    overlay.classList.remove('visible');
     loadGA();
   });
   declineBtn.addEventListener('click', function(){
     localStorage.setItem('cookie-consent', 'denied');
     banner.classList.remove('visible');
+    overlay.classList.remove('visible');
   });
 })();
 </script>
