@@ -172,6 +172,19 @@
     font-size:0.9rem;
   }
 
+  #booking{
+    background:var(--panel);
+  }
+  .booking-embed{
+    background:#fff;
+    border:1px solid var(--line);
+    padding:4px;
+  }
+  .booking-embed iframe{
+    display:block;
+    min-height:520px;
+  }
+
   .kontakt-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -230,7 +243,7 @@
       <nav>
         <a href="#priser">Priser</a>
         <a href="#kontakt">Kontakt</a>
-        <a class="call-btn" href="tel:+4762536920">Ring 625 36 920</a>
+        <a class="call-btn" href="#booking">Bestill time</a>
       </nav>
     </div>
   </header>
@@ -242,7 +255,7 @@
       <div class="hero-facts">
         <div><strong>Martin Bergum</strong>Kiropraktor</div>
         <div><strong>Man–fre</strong>08.00–16.00</div>
-        <div><strong>Time?</strong>Ring eller send e-post</div>
+        <div><strong>Time?</strong><a href="#booking" style="color:inherit;">Bestill online</a> eller ring</div>
       </div>
     </div>
     <svg class="hero-illustration" viewBox="0 0 300 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -279,7 +292,18 @@
         <div class="belop">630 kr</div>
       </div>
     </div>
-    <p class="priser-note">Ring eller send e-post for å bestille time – nettbasert timebestilling kommer.</p>
+    <p class="priser-note">Bestill time online under, eller ring oss.</p>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="wrap">
+    <h2>Bestill time</h2>
+    <div class="booking-embed">
+      <script type="text/javascript" src="https://psno-patient-platform-fe.svc.pasientsky.no/booking-embed-script?id=ecbbaa20-08b7-4d85-98e5-122c49ca249f&version=v1">
+      </script>
+      <iframe width="100%" style="border: none; overflow-y: hidden" id="ecbbaa20-08b7-4d85-98e5-122c49ca249f" src="https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=bf9efb4e-047f-11eb-b99b-72c1d50da674&calendarId=5caf52f2-04c7-11eb-9282-ee3259d83450"></iframe>
+    </div>
   </div>
 </section>
 
